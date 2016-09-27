@@ -69,7 +69,7 @@ namespace BabySitterUnitTests
         {
             // Starts working at 5 PM, 3 hours till 8 PM bedtime and then for one hour till 9 PM
             // must get $36 (till bed time - defaults to 8PM) + $8 = $44
-            Assert.Equals(44, sitterCalculator.Calculate(GetTimeMerged(17, 0), GetTimeMerged(21, 0)));
+            Assert.AreEqual(44, sitterCalculator.Calculate(GetTimeMerged(17, 0), GetTimeMerged(21, 0)));
         }
 
 
