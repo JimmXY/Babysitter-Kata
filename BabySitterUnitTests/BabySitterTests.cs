@@ -42,7 +42,7 @@ namespace BabySitterUnitTests
         }
 
         [TestMethod]
-        public void WhenBabySitterWorksForOneHourBeforeBedtimeGetsPaid12USD()
+        public void ForOneHourBeforeBedtimeReturns12USD()
         {
             DateTime startTime = GetTimeMerged(17, 0);
             DateTime endTime = GetTimeMerged(18, 0);
@@ -51,10 +51,12 @@ namespace BabySitterUnitTests
         }
 
         [TestMethod]
-        public void WhenBabySitterWorksForTwoHoursBeforeBedTimeGetsPaid24USD()
+        public void ForTwoHoursBeforeBedTimeReturns24USD()
         {
             // Starts working at 5 PM till 7 PM, must  get $24
             Assert.AreEqual(24, sitterCalculator.Calculate(GetTimeMerged(17, 0), GetTimeMerged(19, 0)));
         }
+
+        
     }
 }
