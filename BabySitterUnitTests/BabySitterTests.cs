@@ -133,5 +133,17 @@ namespace BabySitterUnitTests
             Assert.AreEqual(64, sitterCalculator.Calculate(start, end));
         }
 
+        public void For5PMTo4AMReturns132USD()
+        {
+            // starting at 05:00 PM
+            DateTime start = DateTime.Today.GetTimeMerged(17, 0);
+
+            // ending at 04:00 AM
+            DateTime end = DateTime.Today.AddDays(1).GetTimeMerged(4, 0);
+
+            // must get 3*12 + 4*8 + 4*16
+            Assert.AreEqual(132, sitterCalculator.Calculate(start, end));
+        }
+
     }
 }
