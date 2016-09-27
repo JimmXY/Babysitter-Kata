@@ -16,10 +16,11 @@ namespace BabySitterUnitTests
         [TestInitialize]
         public void Setup()
         {
-            TimeBlock[] paymentBlocks = new TimeBlock[2];
+            TimeBlock[] paymentBlocks = new TimeBlock[3];
             // 5 PM to bed time
             paymentBlocks[0] = new TimeBlock(17, 20, 0, 12);
             paymentBlocks[1] = new TimeBlock(20, 0, 1, 8);
+            paymentBlocks[1] = new TimeBlock(0, 0, 4, 16);
             sitterCalculator = new BabysitterChargeCalculator(paymentBlocks);
         }
 
