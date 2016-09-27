@@ -103,6 +103,22 @@ namespace BabySitterUnitTests
             Assert.AreEqual(36, sitterCalculator.Calculate(start, end));
         }
 
+        [TestMethod]
+        public void For740PMTo830PMReturns12USD()
+        {
+            // starting at 07:40 PM
+            DateTime start = DateTime.Today.GetTimeMerged(19, 40);
+
+            // ending at 08:30 PM
+            DateTime end = DateTime.Today.GetTimeMerged(20, 30);
+
+            // must get $12 - 50 mins
+            // Boundary condition handling unspecified
+            // assuming that the charges are per hour for each block
+            // and when starting hour block is considered for payment
+            Assert.AreEqual(12, sitterCalculator.Calculate(start, end));
+        }
+
 
     }
 }
