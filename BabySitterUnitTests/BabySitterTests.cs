@@ -90,6 +90,19 @@ namespace BabySitterUnitTests
             Assert.AreEqual(12, sitterCalculator.Calculate(start, end));
         }
 
+        [TestMethod]
+        public void For510PMTo750PMReturns36USD()
+        {
+            // starting at 05:10 PM
+            DateTime start = DateTime.Today.GetTimeMerged(17, 10);
+
+            // ending at 07:50 PM
+            DateTime end = DateTime.Today.GetTimeMerged(19, 50);
+
+            // must get $36 - 2hrs 40 mins - no fractional => 3hrs
+            Assert.AreEqual(36, sitterCalculator.Calculate(start, end));
+        }
+
 
     }
 }
