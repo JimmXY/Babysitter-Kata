@@ -10,13 +10,13 @@ namespace BabySitter
     public class BabysitterChargeCalculator
     {
 
-        
+
         /// <summary>
         /// The payment time blocks settings.
         /// Each time block corresponds to a different charge per hour within that block.
         /// </summary>
         public TimeBlock[] PaymentBlocks { get; }
-        
+
         public BabysitterChargeCalculator(TimeBlock[] paymentBlocks)
         {
             PaymentBlocks = paymentBlocks;
@@ -39,8 +39,8 @@ namespace BabySitter
                 DateTime useStart = startTime > timeBlock.Start ? startTime : timeBlock.Start;
                 DateTime useStop = endTime > timeBlock.End ? timeBlock.End : endTime;
 
-                // now calculate the overlap hours in this block
-                int hoursInBlock = useStop.Subtract(useStart).Hours;
+                // now calculate the overlap hours in this block - round to next hour
+                int hoursInBlock = (int) Math.Ceiling(useStop.Subtract(useStart).TotalMinutes / 60);
                 calculatedCharge += hoursInBlock * timeBlock.CostPerHour;
             }
 
