@@ -20,11 +20,7 @@ namespace BabySitter
         /// Each time block corresponds to a different charge per hour within that block.
         /// </summary>
         public TimeBlock[] PaymentBlocks { get; }
-
         
-
-        
-
 
         /// <summary>
         /// Computes and returns the sitter charge based on the start and end time of the sitter's job.
@@ -52,16 +48,5 @@ namespace BabySitter
             }
         }
 
-        /// <summary>
-        /// Helper function to create time of day DateTimes
-        /// </summary>
-        /// <param name="hour">The hour value of the time of day - in 24 hour format</param>
-        /// <param name="minute">The minute value in the hour</param>
-        /// <returns></returns>
-        private static DateTime GetTimeMerged(int hour, int minute)
-        {
-            DateTime timeSplicedDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, hour, minute, 0);
-            return timeSplicedDate;
-        }
     }
 }
