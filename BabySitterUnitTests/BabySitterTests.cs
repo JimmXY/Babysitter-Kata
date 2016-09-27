@@ -133,6 +133,7 @@ namespace BabySitterUnitTests
             Assert.AreEqual(64, sitterCalculator.Calculate(start, end));
         }
 
+        [TestMethod]
         public void For5PMTo4AMReturns132USD()
         {
             // starting at 05:00 PM
@@ -144,6 +145,7 @@ namespace BabySitterUnitTests
             // must get 3*12 + 4*8 + 4*16
             Assert.AreEqual(132, sitterCalculator.Calculate(start, end));
         }
+
 
     }
 }
