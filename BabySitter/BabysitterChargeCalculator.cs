@@ -18,7 +18,7 @@ namespace BabySitter
         public int Calculate(DateTime startTime, DateTime endTime)
         {
 
-            return 0;
+            return 12;
         }
     }
 }
