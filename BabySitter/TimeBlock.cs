@@ -25,5 +25,12 @@ namespace BabySitter
         /// The per hour rate in this block
         /// </summary>
         public decimal CostPerHour { get; }
+
+        public TimeBlock(int startHour, int startMinute, int endHour, int endMinute, decimal costPerHour)
+        {
+            Start = DateTime.Today.GetTimeMerged(startHour, startMinute);
+            End = DateTime.Today.GetTimeMerged(endHour, endMinute);
+            CostPerHour = costPerHour;
+        }
     }
 }

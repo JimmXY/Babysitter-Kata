@@ -21,23 +21,9 @@ namespace BabySitter
         /// </summary>
         public TimeBlock[] PaymentBlocks { get; }
 
-        /// <summary>
-        /// Constructor the baby sitter charge calculator
-        /// </summary>
-        /// <param name="bedTime">The bed time parameter for charge changes</param>
-        public BabysitterChargeCalculator(DateTime bedTime)
-        {
-            this.BedTime = bedTime;
-        }
+        
 
-        /// <summary>
-        /// Constructor for the baby sitter charge calculator with 
-        /// a default bedtime of 8 PM.
-        /// </summary>
-        public BabysitterChargeCalculator() : this(GetTimeMerged(20, 0))
-        {
-
-        }
+        
 
 
         /// <summary>
