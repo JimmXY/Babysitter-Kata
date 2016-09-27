@@ -28,7 +28,7 @@ namespace BabySitter
         /// Constructor for the baby sitter charge calculator with 
         /// a default bedtime of 8 PM.
         /// </summary>
-        public BabysitterChargeCalculator(): this(GetTimeMerged(8,0))
+        public BabysitterChargeCalculator(): this(GetTimeMerged(20,0))
         {
             
         }
