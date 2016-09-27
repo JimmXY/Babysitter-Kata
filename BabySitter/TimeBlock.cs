@@ -26,11 +26,17 @@ namespace BabySitter
         /// </summary>
         public decimal CostPerHour { get; }
 
-        public TimeBlock(int startHour, int startMinute, int endHour, int endMinute, decimal costPerHour)
+        public TimeBlock(int startHour, int startMinute, int endHour, int endMinute, int dayAdvances, decimal costPerHour)
         {
             Start = DateTime.Today.GetTimeMerged(startHour, startMinute);
-            End = DateTime.Today.GetTimeMerged(endHour, endMinute);
+            
+            End = DateTime.Today.AddDays(dayAdvances).GetTimeMerged(endHour, endMinute);
             CostPerHour = costPerHour;
+        }
+
+        public TimeBlock(int startHour, int endHour, int dayAdvances, decimal costPerHour) : this(startHour, 0, endHour, 0,dayAdvances, costPerHour)
+        {
+
         }
     }
 }
