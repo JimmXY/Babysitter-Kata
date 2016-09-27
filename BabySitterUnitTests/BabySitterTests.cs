@@ -104,7 +104,7 @@ namespace BabySitterUnitTests
         }
 
         [TestMethod]
-        public void For740PMTo830PMReturns12USD()
+        public void For740PMTo830PMReturns20USD()
         {
             // starting at 07:40 PM
             DateTime start = DateTime.Today.GetTimeMerged(19, 40);
@@ -112,11 +112,11 @@ namespace BabySitterUnitTests
             // ending at 08:30 PM
             DateTime end = DateTime.Today.GetTimeMerged(20, 30);
 
-            // must get $12 - 50 mins
+            // must get $20 - 50 mins but in 2 blocks (12 + 8)
             // Boundary condition handling unspecified
             // assuming that the charges are per hour for each block
-            // and when starting hour block is considered for payment
-            Assert.AreEqual(12, sitterCalculator.Calculate(start, end));
+            // and overlaping blocks are split up
+            Assert.AreEqual(20, sitterCalculator.Calculate(start, end));
         }
 
 
