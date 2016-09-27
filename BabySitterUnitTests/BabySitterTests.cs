@@ -49,5 +49,12 @@ namespace BabySitterUnitTests
             // When starting at 5 PM, working for one hour till 6 PM, must get paid $12
             Assert.AreEqual(12, sitterCalculator.Calculate(startTime, endTime));
         }
+
+        [TestMethod]
+        public void WhenBabySitterWorksForTwoHoursBeforeBedTimeGetsPaid24USD()
+        {
+            // Starts working at 5 PM till 7 PM, must  get $24
+            Assert.AreEqual(24, sitterCalculator.Calculate(GetTimeMerged(17, 0), GetTimeMerged(19, 0)));
+        }
     }
 }
