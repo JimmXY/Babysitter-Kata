@@ -38,5 +38,16 @@ namespace BabySitter
         {
 
         }
+
+        /// <summary>
+        /// Determines if the given start and end time overlaps or is within this time block
+        /// </summary>
+        /// <param name="start">The starting time of the period to test</param>
+        /// <param name="end">The ending time of the period to test</param>
+        /// <returns></returns>
+        public bool OverlapsOrIsWithin(DateTime start, DateTime end)
+        {
+            return start <= End && end >= Start;
+        }
     }
 }

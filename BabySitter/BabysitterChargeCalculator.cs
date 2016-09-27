@@ -32,7 +32,7 @@ namespace BabySitter
         {
             decimal calculatedCharge = 0.0M;
             // Take the overlapping blocks
-            IEnumerable<TimeBlock> overlappingBlocks = PaymentBlocks.Where(b => startTime <= b.End && endTime >= b.Start);
+            IEnumerable<TimeBlock> overlappingBlocks = PaymentBlocks.Where(b => b.OverlapsOrIsWithin(startTime, endTime));
             // calculate within the payment blocks
             foreach (TimeBlock timeBlock in overlappingBlocks)
             {
