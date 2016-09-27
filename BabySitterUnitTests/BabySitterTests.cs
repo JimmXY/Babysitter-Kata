@@ -16,12 +16,8 @@ namespace BabySitterUnitTests
         [TestInitialize]
         public void Setup()
         {
-            TimeBlock[] paymentBlocks = new TimeBlock[3];
-            // 5 PM to bed time
-            paymentBlocks[0] = new TimeBlock(17, 20, 0, 12);
-            paymentBlocks[1] = new TimeBlock(20, 0, 1, 8);
-            paymentBlocks[2] = new TimeBlock(DateTime.Today.AddDays(1), 0, 0, 4, 16);
-            sitterCalculator = new BabysitterChargeCalculator(paymentBlocks);
+           
+            sitterCalculator = new BabysitterChargeCalculator();
         }
 
         /// <summary>
@@ -144,6 +140,22 @@ namespace BabySitterUnitTests
 
             // must get 3*12 + 4*8 + 4*16
             Assert.AreEqual(132, sitterCalculator.Calculate(start, end));
+        }
+
+        [TestMethod]
+        public void WhenStartingBefore5PMTill6PMReturns12USD()
+        {
+            // starting at 07:00 AM - random time before 5 PM
+            DateTime start = DateTime.Today.GetTimeMerged(7, 0);
+
+            // ending at 06:00 PM
+            DateTime end = DateTime.Today.GetTimeMerged(18, 0);
+
+            // must get $12 for only 5pm to 6pm
+            // the charge calculator does not throw any error,
+            // it simply ignores any time that MUST NOT be included
+            // in the charges
+            Assert.AreEqual(12, sitterCalculator.Calculate(start, end));
         }
 
 

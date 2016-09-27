@@ -22,6 +22,11 @@ namespace BabySitter
             PaymentBlocks = paymentBlocks;
         }
 
+        public BabysitterChargeCalculator(): this(new TimeBlock[] { new TimeBlock(17, 20, 0, 12), new TimeBlock(20, 0, 1, 8) , new TimeBlock(DateTime.Today.AddDays(1), 0, 0, 4, 16) })
+        {
+            
+        }
+
         /// <summary>
         /// Computes and returns the sitter charge based on the start and end time of the sitter's job.
         /// </summary>
