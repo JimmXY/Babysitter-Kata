@@ -64,6 +64,20 @@ namespace BabySitterUnitTests
             Assert.AreEqual(44, sitterCalculator.Calculate(DateTime.Today.GetTimeMerged(17, 0), DateTime.Today.GetTimeMerged(21, 0)));
         }
 
+        [TestMethod]
+        public void For530PMTo630PMReturns12USD()
+        {
+            // starting at 05:30 PM
+            DateTime start = DateTime.Today.GetTimeMerged(17, 30);
+
+            // ending at 06:30 PM
+            DateTime end = DateTime.Today.GetTimeMerged(18, 30);
+
+            // must get $12
+            Assert.AreEqual(12, sitterCalculator.Calculate(start, end));
+        }
+
+
 
     }
 }
