@@ -27,3 +27,8 @@ I want to calculate my nightly charge
 Assumed conditions:
 - When time extends into two blocks (e.g before bed time and after bed time), costs for both blocks are added up.
 
+Running the Unit Tests
+--------------
+1. Open the solution in Visual Studio. The solution file was generated with Visual Studio 2015 Enterprise Edition.
+2. Run the tests in the BabySitterUnitTests project. Shortcut key CTRL+R, A.
+3. The test project has 15 tests created for TDD.
