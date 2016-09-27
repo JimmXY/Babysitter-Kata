@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BabySitter
 {
-    public class Class1
+    public class BabysitterChargeCalculator
     {
     }
 }
