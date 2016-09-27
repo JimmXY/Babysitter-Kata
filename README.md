@@ -21,4 +21,9 @@ Feature:
 As a babysitter
 In order to get paid for 1 night of work
 I want to calculate my nightly charge
+
 --  Credit: https://gist.github.com/jameskbride/5482722
+
+Assumed conditions:
+- When time extends into two blocks (e.g before bed time and after bed time), costs for both blocks are added up.
+
