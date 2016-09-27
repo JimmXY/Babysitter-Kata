@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,11 @@ namespace BabySitter
         /// <returns>The calculated charge the customer owes the baby sitter for the job</returns>
         public int Calculate(DateTime startTime, DateTime endTime)
         {
-
-            return 12;
+            // compute the number of hours between end and start 
+            int hourDiff = endTime.Subtract(startTime).Hours;
+            Debug.Print("{0} to {1} = {2} hours", startTime, endTime, hourDiff);
+            // calculated cost is the diff in hours multiplied by 12
+            return 12 * hourDiff;
         }
     }
 }
