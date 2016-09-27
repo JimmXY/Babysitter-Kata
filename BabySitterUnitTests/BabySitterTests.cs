@@ -57,6 +57,13 @@ namespace BabySitterUnitTests
             Assert.AreEqual(24, sitterCalculator.Calculate(GetTimeMerged(17, 0), GetTimeMerged(19, 0)));
         }
 
+        [TestMethod]
+        public void ForThreeHoursTillBedTimeReturns36USD()
+        {
+            // Starts working at 5 PM till 8 PM, must get $36
+            Assert.AreEqual(36, sitterCalculator.Calculate(GetTimeMerged(17, 0), GetTimeMerged(20, 0)));
+        }
+
         
     }
 }
