@@ -20,7 +20,7 @@ namespace BabySitterUnitTests
             // 5 PM to bed time
             paymentBlocks[0] = new TimeBlock(17, 20, 0, 12);
             paymentBlocks[1] = new TimeBlock(20, 0, 1, 8);
-            paymentBlocks[1] = new TimeBlock(0, 0, 4, 16);
+            paymentBlocks[2] = new TimeBlock(DateTime.Today.AddDays(1), 0, 0, 4, 16);
             sitterCalculator = new BabysitterChargeCalculator(paymentBlocks);
         }
 
