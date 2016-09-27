@@ -16,6 +16,12 @@ namespace BabySitter
         public DateTime BedTime { get; }
 
         /// <summary>
+        /// The payment time blocks settings.
+        /// Each time block corresponds to a different charge per hour within that block.
+        /// </summary>
+        public TimeBlock[] PaymentBlocks { get; }
+
+        /// <summary>
         /// Constructor the baby sitter charge calculator
         /// </summary>
         /// <param name="bedTime">The bed time parameter for charge changes</param>
