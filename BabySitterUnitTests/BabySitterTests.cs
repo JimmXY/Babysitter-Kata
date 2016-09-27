@@ -23,8 +23,6 @@ namespace BabySitterUnitTests
             sitterCalculator = new BabysitterChargeCalculator(paymentBlocks);
         }
 
-
-
         /// <summary>
         /// Simple first test to get things moving. Makes sure that the constructor is being called without any issues.
         /// This test is irrelevant in most cases - but is included for the first step.

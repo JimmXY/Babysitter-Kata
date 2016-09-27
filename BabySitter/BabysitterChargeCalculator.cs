@@ -41,7 +41,7 @@ namespace BabySitter
 
                 // now calculate the overlap hours in this block
                 int hoursInBlock = useStop.Subtract(useStart).Hours;
-                calculatedCharge *= hoursInBlock * timeBlock.CostPerHour;
+                calculatedCharge += hoursInBlock * timeBlock.CostPerHour;
             }
 
             return calculatedCharge;
